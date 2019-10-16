@@ -163,3 +163,36 @@
     09/03/2019  03:02 PM    <DIR>          Proyek
                 0 File(s)              0 bytes
                 11 Dir(s)  35,846,090,752 bytes free
+
+21. D:\
+    λ net start
+    These Windows services are started:
+
+    AdaptiveSleepService
+    Alps HID Monitor Service
+    AMD External Events Utility
+    Andrea RT Filters Service
+    Application Experience
+    Application Information
+
+22. D:\
+    λ nslookup
+    Default Server:  takwinul.net
+    Address:  192.168.88.1
+
+23. D:\
+    λ path
+    PATH=C:\cmder_mini\bin;C:\cmder_mini\vendor\bin;C:\cmder_mini\vendor\conemu-maximus5\ConEmu\Scripts;C:\cmder_mini\vendor\conemu-maximus5;C:\cmder_mini\vendor\conemu-maximus5\ConEmu;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\gs;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Users\light\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\light\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\cmder_mini
+
+24. D:\
+    λ ping -l 100 192.168.88.1 -t
+
+    Pinging 192.168.88.1 with 100 bytes of data:
+    Reply from 192.168.88.1: bytes=100 time=2ms TTL=64
+    Reply from 192.168.88.1: bytes=100 time=5ms TTL=64
+    Reply from 192.168.88.1: bytes=100 time=2ms TTL=64
+
+25. D:\
+    λ quser
+    USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+    >light                 console             1  Active      22:11  10/16/2019 1:10 PM
