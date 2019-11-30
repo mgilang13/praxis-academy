@@ -1,0 +1,13 @@
+1. Vmlinuz = nama kernel linux yang dieksekusi, vmlinuz kernel linux yang sudah dikompres, dan memungkinkan untuk me-load sebuah sistem operasi ke dalam memori sehingga komputer menajdi dapat digunakan dan program aplikasi dapat berjalan.
+
+2. Initrd image = file yang mengandung informasi program-program yang perlu dieksekusi dan sistem file untuk mendukung booting tahap kedua di dalam sebuah sistem linux.
+
+2. MemTest86 dan memtest86 = software untuk mengetes memori yang didesain untuk tes tekanan pada sebuah RAM untuk mengecek apakah ada error atau tidak
+
+3. System map = sebuah tabel simbol yang diperlukan oleh kernel selama OS berjalan. Sangat berguna apabila terjadi kernel panic dan kernel oopses
+
+4. Config file = untuk mengkonfigurasi dan menginisialisasi pengaturan awal pada saat booting linux
+
+5. Grub = program untuk me-load OS pada personal computer
+
+6. EFI = standar firmware baru yang dikembangkan oleh intel untuk meningkatkan fitur-fitur yang tersedia di dalam BIOS

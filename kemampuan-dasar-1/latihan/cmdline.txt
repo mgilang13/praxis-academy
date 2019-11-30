@@ -1,198 +1,125 @@
-1.  C:\cmder_mini
-    λ cd ..
+1. ls -R
+light@light:~/Documents$ ls -R
+.:
+praxis-academy
 
-    C:\
+./praxis-academy:
+kemampuan-dasar-1
 
-2.  C:\
-    λ d:
+./praxis-academy/kemampuan-dasar-1:
+kasus  latihan
 
-    D:\
+./praxis-academy/kemampuan-dasar-1/kasus:
+cari-java.bat  test.java
 
-3.  λ dir
-    Volume in drive D is Workbench
-    Volume Serial Number is 706E-65C1
+./praxis-academy/kemampuan-dasar-1/latihan:
+env.txt  kernel-linux.txt
 
-    Directory of D:\
+==================================================================
 
-    09/14/2019  09:17 AM    <DIR>          AKBAR LAUNDRY
-    09/15/2019  06:05 AM    <DIR>          enigmacamp
-    09/08/2019  12:28 PM    <DIR>          Fonts
-    09/13/2019  10:02 AM    <DIR>          Jual Ikan Nila
-    10/02/2019  05:13 AM    <DIR>          KAJIAN CHANNEL
-    10/08/2019  03:53 PM    <DIR>          KEDAI DONUT
-    10/14/2019  08:20 AM    <DIR>          Mas Dayat
-    10/07/2019  09:34 PM    <DIR>          PPTM
-    10/16/2019  04:13 PM    <DIR>          praxis-academy
-    09/03/2019  03:02 PM    <DIR>          Proyek
-                0 File(s)              0 bytes
-                10 Dir(s)  35,846,090,752 bytes free
+2. cat > filename
+light@light:~/Documents/praxis-academy$ dir
+kemampuan-dasar-1
+light@light:~/Documents/praxis-academy$ cat > samplefile
+hello mint
+light@light:~/Documents/praxis-academy$ dir
+kemampuan-dasar-1  samplefile
+light@light:~/Documents/praxis-academy$ 
 
-4.  D:\
-    λ copy d:\enigmacamp\enigmacamp.odt d:\
-        1 file(s) copied.
+==================================================================
 
-5.  del enigmacamp.odt
+3. mv filename newfilelocation/newname
+ight@light:~/Documents/praxis-academy$ mv testfile new/testfile2
+light@light:~/Documents/praxis-academy$ cd new
+light@light:~/Documents/praxis-academy/new$ ls
+testfile2
+light@light:~/Documents/praxis-academy/new$ cd ..
+light@light:~/Documents/praxis-academy$ ls
+kemampuan-dasar-1  new
+light@light:~/Documents/praxis-academy$ 
 
-6.  D:\
-    λ date /t
-    Wed 10/16/2019
+==================================================================
 
-7.  D:\
-    λ driverquery
+4. rm -r foldername
+light@light:~/Documents/praxis-academy$ rm -r new
+light@light:~/Documents/praxis-academy$ ls
+kemampuan-dasar-1
+light@light:~/Documents/praxis-academy$ 
 
-    Module Name  Display Name           Driver Type   Link Date
-    ============ ====================== ============= ======================
-    1394ohci     1394 OHCI Compliant Ho Kernel        8/22/2013 6:38:14 PM
-    3ware        3ware                  Kernel        4/12/2013 5:49:23 AM
-    ACPI         Microsoft ACPI Driver  Kernel        2/22/2014 7:13:57 PM
-    ...
+==================================================================
 
-8.  D:\
-    λ diskperf -Y
+5. history
+light@light:~/Documents/praxis-academy$ history
+    1  sudo apt install git
+    2  sudo apt update
+    3  sudo apt install git
+    4  git
+    5  git --version
+    6  git config --global user.name "mgilang13"
+    7  git config --global user.email "muhammad.gilang.n.k@gmail.com"
+    8  code
+    9  dir
+   10  sudo chmod +x bitnami-lampstack-7.3.11-0-linux-x64-installer.run
+   ...
+light@light:~/Documents/praxis-academy$ 
 
-    Both Logical and Physical Disk Performance counters on this system
-            are automatically enabled on demand.
-    Raw counters are also enabled for IOCTL_DISK_PERFORMANCE.
+==================================================================
 
-9.  D:\
-    λ echo "Hello World"
-    "Hello World"
+6. sudo chmod 764 filename
+light@light:~/Documents/praxis-academy$ cat > testfile
+testing
+light@light:~/Documents/praxis-academy$ ls
+kemampuan-dasar-1  testfile
+light@light:~/Documents/praxis-academy$ sudo chmod 764 testfile
+light@light:~/Documents/praxis-academy$ ls -l
+total 8
+drwxr-xr-x 4 light light 4096 Nov 29 12:57 kemampuan-dasar-1
+-rwxrw-r-- 1 light light    8 Nov 29 18:23 testfile
 
-10. D:\
-    λ find /c "teh" d:\enigmacamp\enigmacamp.odt
+==================================================================
 
-    ---------- D:\ENIGMACAMP\ENIGMACAMP.ODT: 
-    
-11. D:\
-    λ ftype txtfile
-    txtfile=%SystemRoot%\system32\NOTEPAD.EXE %1
+7. cat filename | grep search_string
+light@light:~/Documents/praxis-academy$ cat testfile
+testing
+deploying
+analyzing
+requirement details
+light@light:~/Documents/praxis-academy$ cat testfile | grep deploying
+deploying
+light@light:~/Documents/praxis-academy$ 
 
-12. D:\
-    λ getmac
+==================================================================
 
-    Physical Address    Transport Name
-    =================== ==========================================================
-    64-51-06-A5-16-9A   Media disconnected
-    B8-EE-65-B3-CE-74   \Device\Tcpip_{1B397E1E-3931-4F66-843A-46C074DE801F}
+8. cat filename | grep -v search_string | sort -r
+light@light:~/Documents/praxis-academy$ cat testfile
+testing
+deploying
+analyzing
+requirement details
+light@light:~/Documents/praxis-academy$ cat testfile | grep -v a | sort -r
+testing
+deploying
 
-13. D:\
-    λ help
-    For more information on a specific command, type HELP command-name
-    ASSOC          Displays or modifies file extension associations.
-    ATTRIB         Displays or changes file attributes.
-    BREAK          Sets or clears extended CTRL+C checking.
-    ....
+==================================================================
 
-14. D:\
-    λ gpresult /r
+9. cat filename | grep -E search_string
+light@light:~/Documents/praxis-academy$ cat testfile
+testing
+deploying
+analyzing
+requirement details
+light@light:~/Documents/praxis-academy$ cat testfile | grep -E an
+analyzing
+light@light:~/Documents/praxis-academy$ cat testfile | grep -E ing
+testing
+deploying
+analyzing
 
-    Microsoft (R) Windows (R) Operating System Group Policy Result tool v2.0
-    © 2013 Microsoft Corporation. All rights reserved.
+==================================================================
 
-    Created on 10/16/2019 at 4:57:03 PM
+10. echo $PATH
+light@light:~/Documents/praxis-academy$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
 
-    RSOP data for ALGERNON\light on ALGERNON : Logging Mode
-    --------------------------------------------------------
 
-    OS Configuration:            Standalone Workstation
-    OS Version:                  6.3.9600
-    Site Name:                   N/A
-    Roaming Profile:             N/A
-    Local Profile:               C:\Users\light
-    Connected over a slow link?: No
-
-15. D:\
-    λ gpupdate
-    Updating policy...
-
-    Computer Policy update has completed successfully.
-    User Policy update has completed successfully.
-
-16. D:\
-    λ hostname
-    algernon
-
-17. D:\
-    λ ipconfig /all
-
-    Windows IP Configuration
-
-    Host Name . . . . . . . . . . . . : algernon
-    Primary Dns Suffix  . . . . . . . :
-    Node Type . . . . . . . . . . . . : Hybrid
-    IP Routing Enabled. . . . . . . . : No
-    WINS Proxy Enabled. . . . . . . . : No
-
-    Wireless LAN adapter Local Area Connection* 3:
-
-    Media State . . . . . . . . . . . : Media disconnected
-
-18. D:\
-    λ klist
-
-    Current LogonId is 0:0x1d4d612
-
-    Cached Tickets: (0)
-
-19. D:\
-    λ label
-    Volume in drive D: is Workbench
-    Volume Serial Number is 706E-65C1
-
-20. D:\
-    λ mkdir myfolder
-
-    D:\
-    λ dir
-    Volume in drive D is Workbench
-    Volume Serial Number is 706E-65C1
-
-    Directory of D:\
-
-    09/14/2019  09:17 AM    <DIR>          AKBAR LAUNDRY
-    10/16/2019  04:44 PM    <DIR>          enigmacamp
-    09/08/2019  12:28 PM    <DIR>          Fonts
-    09/13/2019  10:02 AM    <DIR>          Jual Ikan Nila
-    10/02/2019  05:13 AM    <DIR>          KAJIAN CHANNEL
-    10/08/2019  03:53 PM    <DIR>          KEDAI DONUT
-    10/14/2019  08:20 AM    <DIR>          Mas Dayat
-    10/16/2019  05:03 PM    <DIR>          myfolder
-    10/07/2019  09:34 PM    <DIR>          PPTM
-    10/16/2019  04:13 PM    <DIR>          praxis-academy
-    09/03/2019  03:02 PM    <DIR>          Proyek
-                0 File(s)              0 bytes
-                11 Dir(s)  35,846,090,752 bytes free
-
-21. D:\
-    λ net start
-    These Windows services are started:
-
-    AdaptiveSleepService
-    Alps HID Monitor Service
-    AMD External Events Utility
-    Andrea RT Filters Service
-    Application Experience
-    Application Information
-
-22. D:\
-    λ nslookup
-    Default Server:  takwinul.net
-    Address:  192.168.88.1
-
-23. D:\
-    λ path
-    PATH=C:\cmder_mini\bin;C:\cmder_mini\vendor\bin;C:\cmder_mini\vendor\conemu-maximus5\ConEmu\Scripts;C:\cmder_mini\vendor\conemu-maximus5;C:\cmder_mini\vendor\conemu-maximus5\ConEmu;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\gs;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Users\light\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\light\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\cmder_mini
-
-24. D:\
-    λ ping -l 100 192.168.88.1 -t
-
-    Pinging 192.168.88.1 with 100 bytes of data:
-    Reply from 192.168.88.1: bytes=100 time=2ms TTL=64
-    Reply from 192.168.88.1: bytes=100 time=5ms TTL=64
-    Reply from 192.168.88.1: bytes=100 time=2ms TTL=64
-
-25. D:\
-    λ quser
-    USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
-    >light                 console             1  Active      22:11  10/16/2019 1:10 PM
