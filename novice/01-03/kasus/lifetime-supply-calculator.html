@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lifetime Supply Calculator</title>
+  </head>
+  <body>
+    <script>
+      function calculateSupply(age, amountPerDay) {
+        let usiaMax = 120;
+        let amountTotal = (usiaMax - age) * 365 * amountPerDay;
+
+        document.write(
+          "You will need " +
+            amountTotal +
+            " kg rice to last you until the ripe old age of " +
+            usiaMax +
+            "<br>"
+        );
+      }
+      calculateSupply(60, 20);
+      calculateSupply(40, 30.5);
+      calculateSupply(20, 100);
+    </script>
+  </body>
+</html>

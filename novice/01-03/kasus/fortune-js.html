@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fortune Teller</title>
+  </head>
+
+  <body>
+    <script>
+      function tellFortune(numberOfChildren, partnerName, geoLoc, jobTitle) {
+        document.write(
+          "You will be a " +
+            jobTitle +
+            " in " +
+            geoLoc +
+            " , and married to " +
+            partnerName +
+            " with " +
+            numberOfChildren +
+            " kids"
+        );
+      }
+
+      tellFortune(12, "Crabby", "Balikpapan", "Programmer");
+      tellFortune(3, "Putri", "Bandung", "Farmer");
+      tellFortune(6, "Shinta", "Yogyakarta", "Contractor");
+    </script>
+  </body>
+</html>
