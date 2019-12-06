@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dictionary</title>
+  </head>
+  <body>
+    <h1>Simple Dictionary</h1>
+    <input type="text" id="kataKunci" placeholder="Kata kunci" />
+    <input type="text" id="definisi" placeholder="Definisi" />
+    <input type="submit" value="Tambah Data Pencarian" onclick="addData()" />
+    <br />
+    <input
+      type="text"
+      id="inputan"
+      placeholder="Keyword"
+      oninput="searchData()"
+    />
+    <p id="searchResult"></p>
+    <input type="text" id="hapusKata" placeholder="Kata yang mau dihapus" />
+    <input type="submit" onclick="deleteKey()" value="Hapus Kata" />
+    <input type="submit" onclick="deleteAll()" value="Hapus Semua Kata" />
+    <p id="pesanTerhapus"></p>
+    <script>
+      let dict = new Map();
+      function addData() {
+        kataKunci = document.getElementById("kataKunci").value;
+        definisi = document.getElementById("definisi").value;
+        dict.set(kataKunci, definisi);
+      }
+
+      function searchData() {
+        inputan = document.getElementById("inputan").value;
+        if (dict.has(inputan)) {
+          document.getElementById("searchResult").innerHTML = dict.get(inputan);
+        } else {
+          document.getElementById("searchResult").innerHTML =
+            "Data belum ditemukan!";
+        }
+      }
+
+      function deleteKey() {
+        hapusKata = document.getElementById("hapusKata").value;
+        if (dict.has(hapusKata)) {
+          dict.delete(hapusKata);
+        } else {
+          document.getElementById("pesanTerhapus").innerHTML =
+            "Data yang mau dihapus tidak ada bos";
+        }
+      }
+
+      function deleteAll() {
+        dict.clear();
+      }
+    </script>
+  </body>
+</html>
