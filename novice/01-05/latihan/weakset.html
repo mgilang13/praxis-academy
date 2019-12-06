@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weakset</title>
+  </head>
+  <body>
+    <script>
+      let visitedSet = new WeakSet();
+
+      let fuad = { name: "fuad" };
+      let gilang = { name: "gilang" };
+      let mei = { name: "mei" };
+
+      visitedSet.add(fuad);
+      visitedSet.add(gilang);
+      visitedSet.add(fuad);
+      alert(visitedSet.has(fuad));
+      alert(visitedSet.has(mei));
+      fuad = null;
+    </script>
+  </body>
+</html>
