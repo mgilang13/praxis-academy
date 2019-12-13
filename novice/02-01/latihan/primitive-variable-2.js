@@ -1,0 +1,24 @@
+var mike = { name: "Mike" };
+var odd = [1];
+var morning = function() {
+  return "Greetings!";
+};
+
+morning.info = "Morning greeting function";
+
+// re-assign new variable
+var evening = morning;
+var john = mike;
+var even = odd;
+
+// reassign to new variable and modify value
+var kate = mike;
+kate = { name: "Kate" };
+
+//modify properties
+evening.info = "Evening greeting function";
+john.name = "John";
+even[0] = 1;
+
+console.log("First ==> ", morning.info, mike, odd);
+console.log("Second ==> ", morning.info, john, even);

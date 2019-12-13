@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Object Properties</title>
+  </head>
+  <body>
+    <script>
+      var Person = function(name) {
+        this.name = name;
+        this.canTalk = true;
+      };
+
+      Person.prototype.greet = function() {
+        if (this.canTalk) {
+          console.log("Hi, I am " + this.name);
+        }
+      };
+
+      var Karyawan = function(name, title) {
+        Person.call(this.name);
+        this.title = title;
+      };
+
+      Karyawan.prototype = Object.create(Person.prototype);
+      Karyawan.prototype.constructor = Karyawan;
+
+      Karyawan.prototype.greet = function() {
+        if (this.canTalk) {
+          console.log(
+            "Hi, my name is " + this.name + " and i'm a " + this.title
+          );
+        }
+      };
+
+      var Customer = function(name) {
+        Person.call(this.name);
+      };
+
+      Customer.prototype = Object.create(Person.prototype);
+      Customer.prototype.constructor = Customer;
+
+      var Mime = function(name) {
+        Person.call(this.name);
+        this.canTalk = false;
+      };
+
+      Mime.prototype = Object.create(Person.prototype);
+      Mime.prototype.constructor = Mime;
+
+      var gilang = new Karyawan("Muhammad Gilang Nur Khoiri", "Bussinessman");
+      var joe = new Customer("Joe");
+      var fajar = new Karyawan("Muhammad Fajar P.", "Programmer");
+      var mike = new Customer("Mike");
+      var mime = new Mime("mime");
+
+      gilang.greet();
+      fajar.greet();
+      mike.greet();
+      mime.greet();
+    </script>
+  </body>
+</html>
