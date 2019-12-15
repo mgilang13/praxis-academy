@@ -1,0 +1,5 @@
+1. Lodash dan Underscore adalah 2 javascript library terbaik. Keduannya sangat populer karena dinilai lebih produktif dengan menggunakan keduanya.
+
+2. Mereka membuat functional programming mudah dan elegan.
+
+3. Ketiga-tiganya meringkas functional programming yang ribet.
