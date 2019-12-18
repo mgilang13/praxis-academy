@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Build A Table</title>
+  </head>
+  <style>
+    #myTable {
+      border-collapse: collapse;
+    }
+    #myTable,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+    }
+    #myTable th,
+    td {
+      padding: 5px 5px 5px 20px;
+    }
+  </style>
+  <body>
+    <h1>Mountains</h1>
+    <div id="mountains"></div>
+    <div id="tableGunung"></div>
+    <script>
+      const MOUNTAINS = [
+        { name: "Kilimanjaro", height: 5895, place: "Tanzania" },
+        { name: "Everest", height: 8848, place: "Nepal" },
+        { name: "Mount Fuji", height: 3776, place: "Japan" },
+        { name: "Vaalserberg", height: 323, place: "Netherlands" },
+        { name: "Denali", height: 6168, place: "United States" },
+        { name: "Popocatepetl", height: 5465, place: "Mexico" },
+        { name: "Mont Blanc", height: 4808, place: "Italy/France" }
+      ];
+
+      let myTable = document.createElement("TABLE");
+      myTable.setAttribute("id", "myTable");
+      document.getElementById("tableGunung").appendChild(myTable);
+
+      let trTag = document.createElement("TR");
+      trTag.setAttribute("id", "trTag");
+      document.getElementById("myTable").appendChild(trTag);
+      document.getElementById("myTable").style.textAlign = "right";
+
+      for (let i = 0; i < Object.keys(MOUNTAINS[0]).length; i++) {
+        let headData = document.createElement("TH");
+        let headText = document.createTextNode(Object.keys(MOUNTAINS[0])[i]);
+        headData.appendChild(headText);
+        document.getElementById("trTag").appendChild(headData);
+      }
+
+      let trTagData = document.createElement("TR");
+      trTagData.setAttribute("id", "trTagData");
+      document.getElementById("myTable").appendChild(trTagData);
+
+      for (let j = 0; j < Object.values(MOUNTAINS[0]).length; j++) {
+        let data1 = document.createElement("TD");
+        let data1Text = document.createTextNode(Object.values(MOUNTAINS[0])[j]);
+        data1.appendChild(data1Text);
+        document.getElementById("trTagData").appendChild(data1);
+      }
+    </script>
+  </body>
+</html>
