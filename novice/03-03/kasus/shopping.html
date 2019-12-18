@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+      li button {
+        font-size: 13px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">My shopping list</h1>
+
+        <div class="columns">
+          <div class="column is-one-quarter">
+            <label for="item">Enter a new item:</label>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-primary"
+                  type="text"
+                  name="item"
+                  id="item"
+                />
+              </div>
+            </div>
+            <button onclick="tambahItem()" class="button is-primary">
+              Add item
+            </button>
+          </div>
+        </div>
+
+        <ul id="listItem"></ul>
+
+        <script>
+          let myNodeList = document.getElementsByTagName("LI");
+          let i;
+          for (i = 0; i < myNodeList.length; i++) {
+            let span = document.createElement("SPAN");
+            let btnDel = document.createElement("BUTTON");
+            let btnTxt = document.createTextNode("Delete");
+            span.className = "dlt";
+            span.appendChild(btnDel);
+            btnDel.appendChild(btnTxt);
+            btnDel.className = "button is-danger is-small";
+            myNodeList[i].appendChild(span);
+          }
+
+          // to hide
+          let del = document.getElementsByClassName("dlt");
+          let j;
+          for (j = 0; j < del.length; j++) {
+            del[j].onclick = function() {
+              var div = this.parentElement;
+              div.style.display = "none";
+            };
+          }
+
+          // tambah baru
+          function tambahItem() {
+            let li = document.createElement("LI");
+            let inputItem = document.getElementById("item").value;
+            let inputText = document.createTextNode(inputItem);
+
+            li.appendChild(inputText);
+            if (inputItem === "") {
+              alert("Jangan dikosongi!");
+            } else {
+              document.getElementById("listItem").appendChild(li);
+            }
+            document.getElementById("item").value = "";
+
+            let span = document.createElement("SPAN");
+            let btnDel = document.createElement("BUTTON");
+            let btnTxt = document.createTextNode("Delete");
+
+            span.className = "dlt";
+            span.appendChild(btnDel);
+            btnDel.appendChild(btnTxt);
+            btnDel.className = "button is-danger is-small";
+            li.appendChild(span);
+
+            for (i = 0; i < del.length; i++) {
+              del[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+              };
+            }
+          }
+        </script>
+      </div>
+    </section>
+  </body>
+</html>
