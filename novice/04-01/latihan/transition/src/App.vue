@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div v-bind:class="[show ? blurClass: '', backClass]">
+      <h1>Transition Demo</h1>
+    </div>
+    <button @click="show = !show">Toggle</button>
+
+    <transition name="fade">
+      <div v-if="show">
+        <h1>{{demo}}</h1>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      demo: "Transition Me",
+      show: false,
+      backCLass: "bk",
+      blurClass: "blur"
+    };
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.bk {
+  transition: all 0.5 ease-out;
+}
+
+.blur {
+  filter: blur(2px);
+  opacity: 0.4;
 }
 </style>
